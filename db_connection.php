@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
 $dbname = 'university_clinic';
-$username = 'root';  // замените на свой логин
-$password = '';      // замените на свой пароль
+$username = 'root';  
+$password = '';      
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);

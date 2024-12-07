@@ -24,6 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !$card) {
 }
 ?>
 
+<?php
+$content = ob_get_clean();
+include 'template.php';
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>

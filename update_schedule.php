@@ -57,13 +57,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
+<?php
+$content = ob_get_clean();
+include 'template.php';
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Редактировать график</title>
-    <script>
+    <script>    
         function toggleTimeFields(scheduleId) {
             const isDayOff = document.getElementById(`is_day_off_${scheduleId}`).checked;
             const timeFields = document.getElementById(`time_fields_${scheduleId}`);

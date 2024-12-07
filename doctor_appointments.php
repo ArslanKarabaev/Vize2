@@ -28,6 +28,11 @@ $stmt->execute([':doctor_id' => $doctor_id]);
 $appointments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<?php
+$content = ob_get_clean();
+include 'template.php';
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>

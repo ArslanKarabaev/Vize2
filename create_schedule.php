@@ -68,6 +68,11 @@ if ($existing_schedule_count == 0) {
 }
 ?>
 
+<?php
+$content = ob_get_clean();
+include 'template.php';
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>

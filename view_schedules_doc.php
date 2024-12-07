@@ -19,6 +19,11 @@ $stmt->execute([':doctor_id' => $doctor_id]);
 $schedules = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<?php
+$content = ob_get_clean();
+include 'template.php';
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -52,6 +57,9 @@ $schedules = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <?php else: ?>
     <p>У вас нет доступных графиков.</p>
 <?php endif; ?>
+
+<a href="update_schedule.php" class="button">Редактировать график</a>
+<a href="create_schedule.php" class="button">Создать график</a>
 
 </body>
 </html>

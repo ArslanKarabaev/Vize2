@@ -221,6 +221,11 @@ $stmt->execute([':medical_card_id' => $medical_card_id]);
 $files = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<?php
+$content = ob_get_clean();
+include 'template.php';
+?>
+
 <h2>Загрузить документ</h2>
 <form method="POST" enctype="multipart/form-data">
     <label for="medical_file">Выберите файл (только PDF):</label>

@@ -32,6 +32,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
+<?php
+$title = "График врачей";
+ob_start();
+?>
+
+<h2>График работы врачей</h2>
+<!-- Список графиков -->
+<ul>
+    <?php foreach ($schedules as $schedule): ?>
+        <li>
+            <?= htmlspecialchars($schedule['doctor_name']) ?> — 
+            <?= htmlspecialchars($schedule['day']) ?>: 
+            <?= htmlspecialchars($schedule['time_from']) ?> - 
+            <?= htmlspecialchars($schedule['time_to']) ?>
+        </li>
+    <?php endforeach; ?>
+</ul>
+
+<a href="index.php" class="button">Вернуться на главную</a>
+
+<?php
+$content = ob_get_clean();
+include 'template.php';
+?>
+
+
 
 <!-- HTML форма записи -->
 <form method="POST">

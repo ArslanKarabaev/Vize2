@@ -13,6 +13,11 @@ $stmt = $pdo->query("
 $schedules = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
+<?php
+$content = ob_get_clean();
+include 'template.php';
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
